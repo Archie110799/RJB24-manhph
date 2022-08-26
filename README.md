@@ -13,7 +13,6 @@
    - IntelliCode (Microsoft)
    - JavaScript (ES6) code snippets (charalampos karypidis)
    - ES7+ React/Redux/React-Native snippets (dsznajder)
-   - npm (Microsoft)
    - npm Intellisense (Christian Kohler)
    - Prettier - Code formatter (Prettier)
    - TSLint (Microsoft)
@@ -84,7 +83,8 @@
 - Start with Material UI, our fully-loaded component library, or bring your own design system to our production-ready components.
 
 
-# GIT
+# GIT 
+git clone https://github.com/Archie110799/RJB24-manhph.git
 ## Add repo
 git init
 git remote add origin <HTTPS>
@@ -93,12 +93,16 @@ git add .
 git commit -m 'init code'
 git push
 git fetch
+
+
 ## git add .
 Thêm toàn bộ những file thay đổi
 ## git commit -m 'text'
 Tạo commit
 ## git push
 Đẩy code lên github
+
+
 ## git log --oneline
 Check lịch sử commit ở local
 ## git reset 
