@@ -1,27 +1,27 @@
-import React from 'react';
+import React, {useState} from "react";
 
 function SimpleExample() {
-  const [name, setName] = React.useState('Peter');
-  const [gender, setGender] = React.useState('unknown');
+  const [name, setName] = useState("Peter");
+  const [gender, setGender] = React.useState("unknown");
   const [children, setChildren] = React.useState(true);
-  const [country, setCountry] = React.useState('VN');
+  const [country, setCountry] = React.useState("VN");
 
   const handleSubmit = (e) => {
     // event of form
     e.preventDefault();
-    console.log('Name:', name);
-    console.log('Gender:', gender);
-    console.log('Children:', children);
-    console.log('Country:', country);
+    console.log("Name:", name);
+    console.log("Gender:", gender);
+    console.log("Children:", children);
+    console.log("Country:", country);
   };
 
   return (
-    <div className=' d-flex justify-content-center m-3'>
-      <div className='border border-light rounded p-3'>
+    <div className=" d-flex justify-content-center m-3">
+      <div className="border border-light rounded p-3">
         <form onSubmit={handleSubmit}>
           <input
-            placeholder='Name'
-            type='text'
+            placeholder="Name"
+            type="text"
             value={name}
             onChange={(e) => {
               setName(e.target.value);
@@ -30,59 +30,59 @@ function SimpleExample() {
           <hr />
 
           <input
-            type='radio'
-            name='gender'
+            type="radio"
+            name="gender"
             value={gender}
             onChange={(e) => {
-              setGender('man');
+              setGender("man");
             }}
           />
-          <label htmlFor='gender'>Man</label>
+          <label htmlFor="gender">Man</label>
 
           <input
-            type='radio'
-            name='gender'
+            type="radio"
+            name="gender"
             value={gender}
             onChange={(e) => {
-              setGender('woman');
+              setGender("woman");
             }}
           />
-          <label htmlFor='gender'>Woman</label>
+          <label htmlFor="gender">Woman</label>
 
           <input
-            type='radio'
-            name='gender'
+            type="radio"
+            name="gender"
             value={gender}
             onChange={(e) => {
-              setGender('unknown');
+              setGender("unknown");
             }}
           />
-          <label htmlFor='gender'>Unknown</label>
+          <label htmlFor="gender">Unknown</label>
           <hr />
-          
+
           <input
-            type='checkbox'
-            name='children'
+            type="checkbox"
+            name="children"
             value={children}
             onChange={(e) => {
               setChildren(e.target.checked);
             }}
           />
-          <label htmlFor='children'>Children</label>
+          <label htmlFor="children">Children</label>
           <hr />
           <select
-            name='country'
+            name="country"
             value={country}
             onChange={(e) => {
               setCountry(e.target.value);
             }}
           >
-            <option value='VN'>Vietnam</option>
-            <option value='US'>United State</option>
-            <option value='JP'>Japan</option>
+            <option value="VN">Vietnam</option>
+            <option value="US">United State</option>
+            <option value="JP">Japan</option>
           </select>
           <hr />
-          <button type='submit'>Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>

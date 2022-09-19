@@ -7,10 +7,10 @@ import Register from "./components/Register";
 function FormsExamples() {
   return (
     <div className="w-50 m-auto mt-3">
-      {/* <MultipleInputFieldsExample/> */}
+      <MultipleInputFieldsExample/>
       {/* <SimpleExample /> */}
       {/* <ReactHookForm /> */}
-      <Register />
+      {/* <Register /> */}
     </div>
   );
 }

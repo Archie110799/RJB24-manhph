@@ -1,3 +1,5 @@
+# DOC: https://reactrouter.com/en/main/start/tutorial
+npm install react-router-dom
 # Router: Component bao bọc tất cả các component khác của Routing
 - Có nhiều loại:
 + BrowserRouter 
