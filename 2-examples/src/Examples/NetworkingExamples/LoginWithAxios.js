@@ -1,6 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 
+// CRUD
+
+//GET -> read -> select
+//POST -> create
+//PUT -> update
+//DELETE -> delete
+
+// RESTAPI
+// HTTP CODE
+
 function LoginWithAxios() {
   const onSubmit = () => {
     const data = {
