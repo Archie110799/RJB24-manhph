@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 // Render list Users dung chung web cua minh
 export default function Home(props) {
+  const navigate = useNavigate()
   const {user} =props
   const [listUser, setListUser] = useState([])
 
@@ -18,7 +20,6 @@ export default function Home(props) {
       // Xử lý kết quả JSON ở đây
       const json = await response.json();
       setListUser(json)
-      console.log(json);
     } catch (error) {
       // Nếu có lỗi
       console.error(error);
@@ -28,9 +29,36 @@ export default function Home(props) {
   useEffect(()=>{
     // CALL API  get list Users
     // setListUser = response API
-    getUsersAsync()
+    // getUsersAsync()
+
+    fetch(`https://632878a09a053ff9aab8cf03.mockapi.io/api/v1/users` ,{
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setListUser(data)
+        // console.log(data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
   },[])
+
+  const handleDelete = (id) => {
+    fetch(`https://632878a09a053ff9aab8cf03.mockapi.io/api/v1/users/${id}` ,{
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        let listUserNew = listUser.filter((item)=>item?.id !== id)
+        setListUser(listUserNew)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     // listUser = [] -> 1
@@ -47,12 +75,12 @@ export default function Home(props) {
           {listUser.map((user) => {
             return (
               <tr key={user?.id}>
-                <th scope="row">{user?.id}</th>
-                <td>{user?.name}</td>
+                <th scope="row" onClick={()=> navigate(`/${user?.id}`)}>{user?.id}</th>
+                <td onClick={()=> navigate(`/${user?.id}`)}>{user?.name}</td>
                 <td>
                   <button
                     className="btn btn-danger"
-                    onClick={() => console.log(user)}
+                    onClick={() => handleDelete(user?.id)}
                   >
                     Delete
                   </button>

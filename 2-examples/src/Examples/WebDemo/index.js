@@ -22,6 +22,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Form from "./Form";
 import Navi from "./Navi";
+import Info from "./Info";
 
 export default function WebDemo() {
   const [user, setUser] = useState({
@@ -30,19 +31,20 @@ export default function WebDemo() {
   });
 
   useEffect(()=>{
-    console.log(user)
+    // console.log(user)
   },[user])
 
   return (
     <>
       <BrowserRouter>
         {/* menu */}
-        {user?.name === undefined ? <Link to={"/login"}>LOGIN</Link> : <Navi />}
+        <Navi />
+        {/* {user?.name === undefined ? <Link to={"/login"}>LOGIN</Link> : <Navi />} */}
 
         {/* Dinh nghia route */}
         <Routes>
-          <Route path="/contact" element={<Contact user={user}/>}></Route>
           <Route path="/" element={<Home user={user}/>}></Route>
+          <Route path="/:id" element={<Info user={user}/>}></Route>
           <Route path="/login" element={<Form setUser={setUser}/>}></Route>
           <Route
             path="*"
