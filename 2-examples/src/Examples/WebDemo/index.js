@@ -45,7 +45,7 @@ export default function WebDemo() {
         <Routes>
           <Route path="/" element={<Home user={user}/>}></Route>
           <Route path="/:id" element={<Info user={user}/>}></Route>
-          <Route path="/login" element={<Form setUser={setUser}/>}></Route>
+          <Route path="/form" element={<Form setUser={setUser}/>}></Route>
           <Route
             path="*"
             element={

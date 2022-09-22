@@ -73,6 +73,7 @@ export default function Home(props) {
         </thead>
         <tbody>
           {listUser.map((user) => {
+            // navigate('/1')
             return (
               <tr key={user?.id}>
                 <th scope="row" onClick={()=> navigate(`/${user?.id}`)}>{user?.id}</th>

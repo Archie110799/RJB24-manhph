@@ -18,22 +18,40 @@ export default function Form(props) {
   const [res, setRes] = React.useState(undefined);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email === USER_NAME && password === USER_PASSWORD) {
-      setUser && setUser({
-        name: email,
-        age: 18,
+    // if (email === USER_NAME && password === USER_PASSWORD) {
+    //   setUser && setUser({
+    //     name: email,
+    //     age: 18,
+    //   })
+    //   console.log("S");
+    //   navigate("/");
+    //   setRes(true);
+    // } else {
+    //   setRes(false);
+    //   console.log("F");
+    // }
+
+    let data = {
+      name: email,
+    };
+
+    fetch(`https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/:id`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log("success", res);
       })
-      console.log("S");
-      navigate("/");
-      setRes(true);
-    } else {
-      setRes(false);
-      console.log("F");
-    }
+      .catch((error) => {
+        console.log("error", error);
+      });
   };
 
   const handleChange = (e) => {
-    console.log(e.target);
     if (e.target.name === "inputEmail"){
       if(e.target.value === '') setErrors('empty')
       if(!e.target.value.includes('@')) setErrors('format was wrong')
@@ -59,39 +77,10 @@ export default function Form(props) {
           onChange={handleChange}
         />
         <button type={"submit"} className="btn btn-danger m-3">
-          Login
+          SUBMIT
         </button>
-        {errors?.email ? 'F' : ''}
+        {/* {errors?.email ? 'F' : ''} */}
       </form>
-
-      {/* <div className="w-50 m-auto mb-3 d-flex">
-        <span>Form Demo</span>
-
-        <small className="text-danger">{res ? "Success" : "Fail"}</small>
-      </div> */}
-
-      {/* Form login */}
-      {/* <form onSubmit={handleSubmit} className="w-50 m-auto">
-        <div>
-          <input
-            name="inputEmail"
-            type={"text"}
-            placeholder={"please enter email"}
-            value={email}
-            onChange={handleChange}
-          />
-          <p className="text-danger">{errors?.email && "Invalid"}</p>
-        </div>
-        <div>
-          <input
-            name="inputPassword"
-            type={"password"}
-            onChange={handleChange}
-          />
-          <p className="text-danger">{errors?.password && "Invalid"}</p>
-        </div>
-        <input type={"submit"} />
-      </form> */}
     </>
   );
 }

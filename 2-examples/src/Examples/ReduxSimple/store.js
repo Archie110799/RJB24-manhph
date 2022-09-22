@@ -1,3 +1,5 @@
+// npm i redux redux-thunk
+
 import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from './rootReducer';
 // REDUX THUNK

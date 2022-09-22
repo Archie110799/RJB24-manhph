@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+
 const defaultState = {
   suppliers: [],
   selectedSupplier: null,
@@ -17,9 +18,9 @@ const supplierReducer = (state = defaultState, action) => {
     case 'GET_SUCCESS':
       return {
         ...state,
-        suppliers: action.suppliers,
         loading: false,
         error: null,
+        suppliers: action.payload,
       };
     case 'GET_ERROR':
       return { ...state, error: action.error, loading: false };

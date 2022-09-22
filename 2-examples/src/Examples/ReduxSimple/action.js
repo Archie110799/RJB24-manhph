@@ -16,15 +16,18 @@ export const getSuppliersAsync = () => {
 };
 
 // CÁC DISPATCH báo trạng thái của ASYNC
+
+//action -> action.type, action.payload
 const getSuppliers_Success = (data) => ({
   type: "GET_SUCCESS", // ACTION TYPE
-  suppliers: data, // PARAMETER
+  payload: data, // PARAMETER
 });
 
 const getSuppliers_Pending = () => ({
   type: "GET_PENDING", // ACTION TYPE
 });
 
+//action -> action.type, action.error
 const getSuppliers_Error = (error) => ({
   type: "GET_ERROR", // ACTION TYPE
   error: error, // PARAMETER
