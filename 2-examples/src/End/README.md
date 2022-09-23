@@ -34,3 +34,11 @@ Projects: Bao gồm:
     - Dữ liệu nhận: thông tin Project đã được tạo.
     . Trường hợp tạo thành công: <Alert('Project đã được tạo thành công.')>
     . Trường hợp tạo thất bại  : <Alert('Project chưa được tạo. Vui lòng thử lại.')>
+
+# Hướng dẫn làm bài
+- Ở source bài tập của các bạn sẽ tạo ra:
++ Folder: có tên là END.
++ Trong END: Thực hiện tạo 2 file:
+    1. LYTHUYET.md
+    2. ThucHanh.js
+- NOTE: Phần thực hành phải chạy lên trình duyệt để chấm bài.
