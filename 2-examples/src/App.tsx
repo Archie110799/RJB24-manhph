@@ -5,6 +5,8 @@ import FormikExamples from "./Examples/FormikExamples";
 import FormsExamples from "./Examples/FormsExamples";
 import ReactRouterExamples from "./Examples/ReactRouterExamples";
 import ReduxSimple from "./Examples/ReduxSimple";
+import GeneralType from "./Examples/TypeScript/GeneralType";
+import Other from "./Examples/TypeScript/Other";
 import WebDemo from "./Examples/WebDemo";
 
 function App() {
@@ -14,8 +16,10 @@ function App() {
       {/* <FormikExamples /> */}
       {/* <FormsExamples/> */}
       {/* <ReactRouterExamples /> */}
-      <WebDemo />
+      {/* <WebDemo /> */}
       {/* <ReduxSimple /> */}
+      <GeneralType />
+      <Other />
     </>
   );
 }
