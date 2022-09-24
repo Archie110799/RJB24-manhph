@@ -17,9 +17,9 @@ function App() {
       {/* <FormsExamples/> */}
       {/* <ReactRouterExamples /> */}
       {/* <WebDemo /> */}
-      {/* <ReduxSimple /> */}
-      <GeneralType />
-      <Other />
+      <ReduxSimple />
+      {/* <GeneralType /> */}
+      {/* <Other /> */}
     </>
   );
 }

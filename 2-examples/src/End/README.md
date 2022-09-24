@@ -1,9 +1,8 @@
 # Lý thuyết
 1. Có bao nhiêu loại component? Liệt kê các component.
-2. Nêu khái niệm của Props và State. So sánh Props và State. 
-3. Có bao nhiêu method call API
-4. HTTP Request là gì? Liệt kê các phương thức HTTP request.
-5. Sự khác biệt giữa Library và Framework là gì? Redux thuộc loại nào?
+2. Nêu khái niệm của Props và State. So sánh Props và State.
+3. HTTP Request là gì? Liệt kê các phương thức HTTP request.
+4. Sự khác biệt giữa Library và Framework là gì? Redux thuộc loại nào?
 
 # Thực hành
 Solution Anywhere là trụ sở của tổ chức phát triển phần mềm mã nguồn mở tại Chicago, Hoa Kỳ. 
@@ -17,7 +16,9 @@ Login   : Thành viên đăng nhập vào hệ thống. Xuất hiện khi ngư�
 - 1 button "Login": Khi click sẽ xảy ra 2 trường hợp như sau:
 + Nếu UserName = 'admin' và password = 'admin' thì Redirect đến màn hình Projects
 + Trường hợp UserName và password khác : Alert('Thông tin không chính xác. Xin thử lại.')
-Home    : Cung cấp giao diện thông tin về trụ sở Solution Anywhere.
+Home    : 
++ Render UerName ở góc trên cùng bên phải.
++ Show thông tin về trụ sở Solution Anywhere.
 Projects: Bao gồm:
 - 1 bảng liệt kê thông tin các Projects của tổ chức bao gồm các cột như sau:
 + STT, Tên, Chức năng

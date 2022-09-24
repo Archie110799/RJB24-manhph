@@ -16,7 +16,16 @@ Ví dụ: Thông tin user
 - Hỗ trợ tính năng undo, redo (uni-derectional)
 - Cần catch data để tái sử dụng lần sau
 
+# Ứng dụng
+- Redux có thể dùng cho các javascript app: 
++ ReactJS
++ Angular
++ VueJs
++ Pure javascript App
++ Other javascript App
+
 # Step
+* npm i redux redux-thunk react-redux
 - rootReducer
 - createStore
 - Add Provider, store 

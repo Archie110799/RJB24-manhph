@@ -26,7 +26,7 @@
    - Theme: Dracula Official (Dracula Theme)
 
 7. Các tài nguyên
-   - Bootstrap: https://www.npmjs.com/package/bootstrap/v/4.6.0#quick-start
+   - Bootstrap: https://www.npmjs.com/package/bootstrap
      > Add index.js: import 'bootstrap/dist/css/bootstrap.min.css'
    - Avatars: https://pravatar.cc/
    - Icons: https://react-icons.github.io/react-icons/

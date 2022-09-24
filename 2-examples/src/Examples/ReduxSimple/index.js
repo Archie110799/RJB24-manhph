@@ -1,10 +1,10 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Navi from "./Navi";
+import Navi from "./components/Navi";
 import store from "./store";
-import SupForm from "./SupForm";
-import SupList from "./SupList";
+import SupForm from "./components/SupForm";
+import SupList from "./components/SupList";
 
 export default function End() {
   return (

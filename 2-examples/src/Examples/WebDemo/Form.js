@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { setConstantValue } from "typescript";
 
 export default function Form(props) {
   const {setUser} = props
@@ -32,7 +33,7 @@ export default function Form(props) {
     // }
 
     let data = {
-      name: email,
+      name: 'abc',
     };
 
     fetch(`https://63284e93a2e90dab7bdd0fd7.mockapi.io/api/v1/users/:id`, {
@@ -45,6 +46,7 @@ export default function Form(props) {
       .then((response) => response.json())
       .then((res) => {
         console.log("success", res);
+        setConstantValue(res)
       })
       .catch((error) => {
         console.log("error", error);

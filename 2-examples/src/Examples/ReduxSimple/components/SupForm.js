@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const textAddress = ["43 Domenic Horse", "92 Run Bear", "75 Chauncey Lion"];
 
 export default function SupForm() {
+  const navigate = useNavigate()
   const [isDisabled, setIsDisable] = useState(true);
   const [branch, setBranch] = useState("");
   const [address, setAddress] = useState("Please gen address");
@@ -42,20 +44,24 @@ export default function SupForm() {
       address: address,
     };
 
-    fetch("http://localhost:9222/about/1", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("success", data);
-      })
-      .catch((error) => {
-        console.log("error", error);
-      });
+    console.log(data);
+    navigate('/ab')
+
+    
+    // fetch("http://localhost:9222/about/1", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log("success", data);
+    //   })
+    //   .catch((error) => {
+    //     console.log("error", error);
+    //   });
   };
   return (
     <>
