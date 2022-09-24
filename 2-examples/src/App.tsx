@@ -8,6 +8,7 @@ import ReduxSimple from "./Examples/ReduxSimple";
 import GeneralType from "./Examples/TypeScript/GeneralType";
 import Other from "./Examples/TypeScript/Other";
 import WebDemo from "./Examples/WebDemo";
+import Session08 from "./Homeworks/Session08";
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
       {/* <FormsExamples/> */}
       {/* <ReactRouterExamples /> */}
       {/* <WebDemo /> */}
-      <ReduxSimple />
+      {/* <ReduxSimple /> */}
       {/* <GeneralType /> */}
       {/* <Other /> */}
+      <Session08 />
     </>
   );
 }

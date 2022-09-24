@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const ERROR_EMAIL = {
   required: "Email Address is required",
@@ -8,6 +9,7 @@ const ERROR_EMAIL = {
 };
 
 export default function ProductForm() {
+  const navigate = useNavigate()
   const [cities, setCities] = useState([]);
 
   const {
@@ -38,7 +40,10 @@ export default function ProductForm() {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log(data);
+    console.log(data.email, data.password)
+    if(data.email === 'rjb24@gmail.com' && data.password === 'admin'){
+      navigate('/')
+    }
   };
 
   return (
@@ -74,115 +79,8 @@ export default function ProductForm() {
         </div>
 
         <div className="col-12">
-          <label htmlFor="inputAddress" className="form-label">
-            Address
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
-            {...register("address1", { required: true })}
-          />
-        </div>
-
-        <div className="col-12">
-          <label htmlFor="inputAddress2" className="form-label">
-            Address 2
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputAddress2"
-            placeholder="Apartment, studio, or floor"
-            {...register("address2", { required: true })}
-          />
-        </div>
-
-        <div className="col-md-4">
-          <label htmlFor="inputState" className="form-label">
-            City
-          </label>
-          <select
-            id="inputState"
-            defaultValue=""
-            className="form-select m-2 pb-2"
-            {...register("city", { required: true })}
-          >
-            <option value="">Choose...</option>
-            {cities.map((item) => {
-              return <option key={`city-${item?.code}`}>{item?.name}</option>;
-            })}
-          </select>
-        </div>
-        <div className="col-md-4">
-          <label htmlFor="inputDistrict" className="form-label">
-            District
-          </label>
-          <select
-            id="inputDistrict"
-            className="form-select m-2 pb-2"
-            {...register("district", { required: true })}
-          >
-            <option value="">Choose</option>
-            {cities.map((item) => {
-              return item?.name === cityWatch
-                ? item?.districts.map((district) => {
-                    return (
-                      <option key={`districts-${district?.code}`}>
-                        {district?.name}
-                      </option>
-                    );
-                  })
-                : null;
-            })}
-          </select>
-        </div>
-        <div className="col-md-4">
-          <label htmlFor="inputCommune" className="form-label">
-            Commune
-          </label>
-          <select
-            id="inputCommune"
-            defaultValue=""
-            className="form-select m-2 pb-2"
-            {...register("commune", { required: true })}
-          >
-            <option value="">Choose...</option>
-            {cities.map((item) => {
-              return item?.name === cityWatch
-                ? item?.districts.map((district) => {
-                    return district?.name === districtWatch
-                      ? district?.wards.map((ward) => {
-                          return (
-                            <option key={`ward-${ward?.code}`}>
-                              {ward?.name}
-                            </option>
-                          );
-                        })
-                      : null;
-                  })
-                : null;
-            })}
-          </select>
-        </div>
-
-        <div className="col-12">
-          <div className="form-check text-start mx-2">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              id="gridCheck"
-            />
-            <label className="form-check-label" htmlFor="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div>
-
-        <div className="col-12">
           <button type="submit" className="btn btn-primary">
-            Sign in
+            Submit
           </button>
         </div>
       </form>

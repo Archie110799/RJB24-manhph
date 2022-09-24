@@ -274,7 +274,7 @@ export default function CustomerForm() {
 
         <div className="col-12">
           <button type="submit" className="btn btn-primary">
-            Sign in
+            Submit
           </button>
         </div>
       </form>
