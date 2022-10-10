@@ -8,6 +8,7 @@ import ReduxSimple from "./Examples/ReduxSimple";
 import GeneralType from "./Examples/TypeScript/GeneralType";
 import Other from "./Examples/TypeScript/Other";
 import WebDemo from "./Examples/WebDemo";
+import MusicPlayer from "./Homeworks/Session03/MusicPlayer";
 import Session08 from "./Homeworks/Session08";
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
       {/* <ReduxSimple /> */}
       {/* <GeneralType /> */}
       {/* <Other /> */}
-      <Session08 />
+      {/* <Session08 /> */}
+      <MusicPlayer />
     </>
   );
 }

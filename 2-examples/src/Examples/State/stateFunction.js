@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+/**
+ * 
+ * @returns JSX
+ */
+
 function StateFunction() {
   // Sử dụng state
   const [color, setColor] = useState("Black");
